@@ -4,11 +4,15 @@ GitHub always shows `.html` files as source in the repo. The live site is the re
 
 **[Open the live HTML site](https://poonamm1.github.io/System-Design-Backend/)**
 
-Anyone with that link can view the library in a browser (topics, cards, and related documents). After you make the repo **public**, GitHub Pages can serve it for free.
+## One-time GitHub Pages setup
 
-## After you push these files
+The first deploy failed because Pages was not enabled on this repository yet.
 
-1. On GitHub: **Settings → Pages**.
-2. Set **Source** to **GitHub Actions**.
-3. If the repo is private, either make it public or use GitHub Pro so Pages can be public.
-4. Wait a minute for the **Deploy GitHub Pages** workflow, then open the link above.
+**Do this once on GitHub:**
+
+1. Open the repo → **Settings** → **Pages**.
+2. Under **Build and deployment** → **Source**, choose **GitHub Actions**.
+3. If the repo is **private**, make it **public** (Pages on private repos needs GitHub Pro).
+4. Re-run the failed **Deploy GitHub Pages** workflow: **Actions** → the failed run → **Re-run all jobs**.
+
+After that, pushes to `main` publish the site automatically.
