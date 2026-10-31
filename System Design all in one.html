@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>System Design for Backend Engineers</title>
+  <meta name="description" content="A growing collection of interactive system-design worlds for backend engineers." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0e0d0b;
+      --panel: #171512;
+      --line: #2c2820;
+      --gold: #d4a94e;
+      --gold-soft: #b8924a;
+      --text: #ece5d8;
+      --muted: #9a917f;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: "IBM Plex Sans", system-ui, sans-serif;
+      min-height: 100vh;
+      background-image:
+        radial-gradient(ellipse 80% 50% at 50% -10%, rgba(212, 169, 78, 0.08), transparent);
+    }
+    .wrap { max-width: 960px; margin: 0 auto; padding: 64px 24px 96px; }
+
+    .eyebrow {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold-soft);
+    }
+    h1 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(2.4rem, 6vw, 3.6rem);
+      font-weight: 600;
+      line-height: 1.05;
+      margin-top: 12px;
+    }
+    .sub { color: var(--muted); margin-top: 14px; max-width: 56ch; line-height: 1.6; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 48px;
+    }
+    a.card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 26px 24px 22px;
+      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+    a.card:hover {
+      border-color: var(--gold);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(212, 169, 78, 0.12);
+    }
+    .card .icon { font-size: 1.8rem; }
+    .card h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.55rem;
+      font-weight: 600;
+      margin-top: 12px;
+    }
+    .card p { color: var(--muted); font-size: 0.9rem; line-height: 1.55; margin-top: 8px; }
+    .card .go {
+      display: inline-block;
+      margin-top: 16px;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+    }
+    .soon {
+      border: 1px dashed var(--line);
+      border-radius: 16px;
+      padding: 26px 24px;
+      color: var(--muted);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 8px;
+    }
+    .soon h2 { font-family: "Cormorant Garamond", serif; font-size: 1.3rem; color: var(--muted); }
+    footer {
+      margin-top: 72px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.8rem;
+      font-family: "JetBrains Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <p class="eyebrow">🛕 a living library</p>
+    <h1>System Design for Backend Engineers</h1>
+    <p class="sub">
+      Interactive worlds that teach distributed systems the way a memory palace does —
+      walk through them, break things, and watch how the architecture responds.
+      Click a topic to open it live; nothing to install or run.
+    </p>
+
+    <div class="grid">
+      <!-- ✏️ To add a new topic later: copy this whole <a class="card">…</a> block,
+           change the link, icon, title and description. -->
+      <a class="card" href="https://screenshot-to-scenery-05.lovable.app" target="_blank" rel="noopener">
+        <div class="icon">🛕</div>
+        <h2>Distributed Logging System</h2>
+        <p>
+          The Divine Knowledge Temple — an interactive world of a production logging
+          pipeline: collectors, Kafka, stream processing, OpenSearch and archive
+          storage, with failure labs and an interview mode.
+        </p>
+        <span class="go">OPEN THE WORLD →</span>
+      </a>
+
+      <div class="soon">
+        <h2>Next topic</h2>
+        <p>Your next system-design world will appear here. Duplicate the card above and point it at its link.</p>
+      </div>
+    </div>
+
+    <footer>system design · backend engineering · built as interactive worlds</footer>
+  </main>
+</body>
+</html>
