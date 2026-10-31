@@ -1,18 +1,24 @@
 # System Design for Backend Engineers
 
-GitHub always shows `.html` files as source in the repo. The live site is the rendered page.
+GitHub always shows `.html` files as source in the repo. The live site is:
 
-**[Open the live HTML site](https://poonamm1.github.io/System-Design-Backend/)**
+**[https://poonamm1.github.io/System-Design-Backend/](https://poonamm1.github.io/System-Design-Backend/)**
 
-## One-time GitHub Pages setup
+## Why the GitHub Action failed
 
-The first deploy failed because Pages was not enabled on this repository yet.
+`actions/configure-pages` cannot turn Pages on by itself. GitHub returns **404 Not Found** until Pages is enabled in the repo **Settings**. That is a GitHub account setting, not an HTML bug.
 
-**Do this once on GitHub:**
+The Actions workflow was removed so commits no longer fail. This site is static (`index.html`), so GitHub can serve it **from the `main` branch**.
 
-1. Open the repo → **Settings** → **Pages**.
-2. Under **Build and deployment** → **Source**, choose **GitHub Actions**.
-3. If the repo is **private**, make it **public** (Pages on private repos needs GitHub Pro).
-4. Re-run the failed **Deploy GitHub Pages** workflow: **Actions** → the failed run → **Re-run all jobs**.
+## Enable the live site (one time)
 
-After that, pushes to `main` publish the site automatically.
+1. Make the repo **public** (Settings → General → Danger Zone → Change visibility). Free Pages does not work on a private repo without GitHub Pro.
+2. Open **Settings → Pages**.
+3. Under **Build and deployment**:
+   - **Source:** Deploy from a branch
+   - **Branch:** `main`
+   - **Folder:** `/ (root)`
+4. Click **Save**.
+5. Wait about a minute, then open the link above.
+
+You should see “Your site is live at …” on the Pages settings screen.
